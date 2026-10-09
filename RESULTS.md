@@ -1,6 +1,8 @@
 # DOC-2-080 RESULTS - review pending (independent gate has not cleared; no claim is final)
 
-Label (set mechanically by analysis_080.py): **EMBEDDING-BEATS-LOCAL-CONTEXT**. G1 pass, G2 pass. Prior art: residue-level functional signal in protein language models is known; this is a replication-style measurement with a 35M model, not a novelty claim.
+Label (set mechanically by analysis_080.py): **EMBEDDING-BEATS-LOCAL-CONTEXT**. G1 pass, G2 pass.
+
+**Scoped claim (gate DOC-2-080 verdict, scoped pass):** Under family-held-out folds at sampled prevalence (about 10%), a linear probe on frozen residue embeddings beats a +-3 residue-window baseline for ranking annotated active-site residues; most labels are similarity/rule-propagated annotations. Nothing beyond this wording is claimed. Any claim beyond it requires the new preregistered follow-up DOC-2-08x (experimental-evidence-only ECO:0000269 labels, clan-level holdout, natural-prevalence evaluation, amino-acid-identity-only baseline); it is not an amendment to this project. Prior art: residue-level functional signal in protein language models is known; this is a replication-style measurement with a 35M model, not a novelty claim.
 
 | item | value |
 |---|---|
@@ -13,10 +15,10 @@ Label (set mechanically by analysis_080.py): **EMBEDDING-BEATS-LOCAL-CONTEXT**. 
 | G3 (reported only) | E AUPRC 0.751, CI [0.712, 0.787]; E AUROC 0.949 |
 
 ## What this shows and does not show
-- In held-out Pfam families (5-fold, no family split across folds), a linear probe on 35M-parameter ESM-2 residue embeddings ranks annotated active-site residues far above a strong local-context baseline (AUPRC 0.751 vs 0.517 at sampled prevalence 0.10).
+- In held-out Pfam families (5-fold, no family split across folds) at sampled prevalence (about 10%), a linear probe on frozen 35M-parameter ESM-2 residue embeddings beats a +-3 residue-window baseline for ranking annotated active-site residues (AUPRC 0.751 vs 0.517). Most labels are similarity/rule-propagated annotations (see below).
 - AUPRC values are relative to the sampled prevalence (about 10%) and are not deployment numbers; at natural prevalence precision would be much lower. AUROC (0.949 vs 0.908) is prevalence-independent in expectation and shows a smaller gap.
 - Pfam family holdout does not remove clan-level homology between folds; related families can share catalytic motifs, which would help E and B2 differently. Not measured.
-- Labels include UniProt annotations propagated by sequence similarity or rule (ECO:0000250/0000255), not only experimental ones; evidence level was not filtered. A probe may partly learn the propagation pattern rather than catalytic chemistry. Not tested.
+- Labels include UniProt annotations propagated by sequence similarity or rule (ECO:0000250/0000255), not only experimental ones; evidence level was not filtered. Most labels are of this kind, so the result is about ranking annotated residues, not catalytic chemistry. A probe may partly learn the propagation pattern. Not tested.
 - B2 has 140 dims and E has 480; B2 is a local-window baseline, not the strongest sequence baseline (no alignment-based or conservation baseline, no larger-window or learned-sequence baseline). The result shows E beats a local window, not that E beats alignment-based motif tools.
 - Narrow target: only annotated active-site residues in enzymes (1 to 5 per protein, 6 proteins per family, 200 families). "Motif" here means the catalytic residue, not a sequence motif. No claim about binding sites or other motifs.
 - One model size, last layer only, linear probe, single seed, CPU only.
