@@ -1,0 +1,8 @@
+1c77d7793b2c8eecd017cfcd99b5f51c  proteins.tsv
+6efaa71ad6ee28217d21e86bb91d49c0  residues.tsv
+80d36453d80db4f2233b13d5be8c70e7  res_emb.npy
+ca3c4cc9c0a99f5791417bbabc5291d8  act_raw.tsv
+0cc61504a26d8757ffdaff768d4ce775  analysis_080.py
+97bda52f3824775dcb96dec685208210  acquire_act.py
+77ee1d74fad0c418d514f82ea9d86bdc  build_080.py
+2b68b411c477819b4923a3e256cbf30f  embed_res.py
