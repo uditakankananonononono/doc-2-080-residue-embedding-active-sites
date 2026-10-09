@@ -1,0 +1,1 @@
+note: run_log.txt lacks the exit/end_utc lines because the builder shell was killed by its time limit after python wrote results.json (file mtime 17:18:xx UTC, written 22:48:56 IST); analysis ran once, no rerun.
